@@ -1,0 +1,15 @@
+<% if local_assigns[:mdl].errors.any? %>
+  <div class="panel panel-danger">
+    <div class="panel panel-heading panel-danger">
+      <h2>following <%= pluralize(local_assigns[:mdl].errors.count, "error") %>
+      causing post can't be saved</h2>
+    </div>
+    <div class="panel panel-body">
+      <ul class="list-group">
+        <% local_assigns[:mdl].errors.full_messages.each do |m| %>
+          <li class="list-group-item text-danger"><%= m %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

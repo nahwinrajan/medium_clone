@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="page-header text-center">
+    <h1> <%= @story.title%> </h1>
+    <small> <%= @story.subtitle%> </small>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= simple_format(@story.content) %>
+    </div>
+    <div class="col-md-1">
+      <%= link_to "edit", edit_story_path(@story), class: 'btn btn-default' %>
+      <%= link_to "delete", story_path(@story), method: :delete, data: {confirm: "Are you sure to delete this post ?"}, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>

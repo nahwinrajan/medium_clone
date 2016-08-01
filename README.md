@@ -1,28 +1,32 @@
-== README
+# Medium Clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## epilogue
+was thinking about a project to practice and as a showcase for my skills in Ruby on Rails.
 
-Things you may want to cover:
+was thinking about creating a forum due to with it I can cover the following topic:
+- table relationship
+  - user following and follower
+  - story, user, categories, comments
+- user authentication (using devise)
+  - sign up / sign in
+  - password recovery
+  - authentication token
+  - block on failed try
+- voting (using act_as_vote)
+  - vote for story (likes)
+- email notification (haven't decide the gem for this)
+  - on new response
+- file upload (using paperclip)
+- bootstrap styling
+  - breadcrumb
+  - pagination
+  - all other commmon bootstrap components
 
-* Ruby version
+and while drafting the Relationship model, I realize that the category/ies
+is such a annoyance from user point of view (imagine that you have to think the thread you are writing belong to which category and sub-category AND the embarassment when the response say you post it on the wrong category)
 
-* System dependencies
+therefor I thought it will be better to just use tags, something like a stack overflow BUT I don't want it to look like tradional forum structure afterall it will be called a story so should be something more inviting.
 
-* Configuration
+and when I look around for inspiration it turn out what I want "Medium" (minus the awesome editor [for the moment]).
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+P.S: do mind my ignorance of Medium all this time, most likely to read from other sources :p/

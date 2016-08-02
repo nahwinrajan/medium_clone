@@ -35,12 +35,12 @@ Clone and an e-commerce site)
 
 ## To Do List
 1. Story  => Done
-2. User + authentication using devise =>
+2. User + authentication using devise => Done
 3. Comment
 3. Add Voting (for user and story)
-4. Populate database with dummy (faker gem)
-5. Follow and Following feature
-5. Trending tags on the home
+4. Follow and Following feature
+5. Trending tags on the home (keep track of tags by story;)
+6. Populate database with dummy (faker gem)
 
-I'll only apply basic styling for this project as aesthetics can hold untill all
+I'll only apply basic styling for this project as aesthetics can hold until all
 the feature is implemented.

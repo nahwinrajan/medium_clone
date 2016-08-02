@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
   @import "bootstrap-sprockets";
@@ -30,11 +31,8 @@
     font-size: 16px;
     line-height: 1.5em;
     color: #555;
+     padding-top: 70px; //navbar-fixed-top requirement
   }
-
- .body-wrapper {
-    margin-top: 45px;
- }
 
   .debug_dump {
     clear: both;

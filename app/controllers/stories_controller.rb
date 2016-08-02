@@ -1,4 +1,5 @@
 class StoriesController < ApplicationController
+  before_action :authenticate_user!, except:[:index, :show]
   before_action :find_story, only: [:show, :edit, :update, :delete, :destroy]
 
   def index
@@ -9,11 +10,13 @@ class StoriesController < ApplicationController
   end
 
   def new
-    @story = Story.new
+    # => mind the plural in current_user.stories
+    # => this is to "1..*" relationship of users => stories table
+    @story = current_user.stories.build
   end
 
   def create
-    @story = Story.new(story_params)
+    @story = current_user.stories.build(story_params)
 
     if @story.save
       flash[:success] = "Yeay, published #{@story.title} !!"

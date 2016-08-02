@@ -29,4 +29,18 @@ therefor I thought it will be better to just use tags, something like a stack ov
 
 and when I look around for inspiration it turn out what I want "Medium" (minus the awesome editor [for the moment]).
 
-P.S: do mind my ignorance of Medium all this time, most likely to read from other sources :p/
+P.S: this will also serve as base for upcoming experiment project (Instagram's
+Clone and an e-commerce site)
+
+
+## To Do List
+1. Story  => Done
+2. User + authentication using devise =>
+3. Comment
+3. Add Voting (for user and story)
+4. Populate database with dummy (faker gem)
+5. Follow and Following feature
+5. Trending tags on the home
+
+I'll only apply basic styling for this project as aesthetics can hold untill all
+the feature is implemented.

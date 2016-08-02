@@ -1,11 +1,16 @@
 class Story < ActiveRecord::Base
+  before_save { self.tags = tags.downcase }
+
+  belongs_to :user
+
   validates :title, presence: true, length: { minimum: 3 }
   validates :content, presence: true, length: { minimum: 25 }
   validates :tags, presence: true
 
   validate :tags_length
 
-  REGEX_TAGS_SPLIT_BY_HASH = '/\#\w+/i'
+  # any alphanumeric string of at least with 1 char after the hash
+  REGEX_TAGS_SPLIT_BY_HASH = '/\#[\w]+/i'
 
   def tags_length
     arr_tags = tags.split(REGEX_TAGS_SPLIT_BY_HASH)

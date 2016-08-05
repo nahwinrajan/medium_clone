@@ -1,0 +1,14 @@
+<%= form_for([@story, @story.comments.build]) do |f| %>
+  <div class="form-group">
+    <%= f.label :content, "comment" %>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-comment"></i> </span>
+      <%= f.text_area :content, class:"form-control",
+        placeholder:"", autofocus: true %>
+    </div>
+  </div>
+  <br />
+  <div class="form-group">
+    <%= f.submit "comment", :class => "btn btn-success btn-lg" %>
+  </div>
+<% end %>

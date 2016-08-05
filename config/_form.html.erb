@@ -23,7 +23,8 @@
 
         <div class="form-group">
           <%= f.label :tags %>
-          <%= f.text_field :tags, class:"form-control", placeholder:"minimum 1 tag and maximum 6 tags, use # as prefix for tags" %>
+          <%= f.text_field :tags, class:"form-control",
+          placeholder:"at least a tag, tag start with # (#yourTag), max 6 tags" %>
         </div>
 
         <div class="form-group">

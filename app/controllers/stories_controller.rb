@@ -39,6 +39,11 @@ class StoriesController < ApplicationController
     end
   end
 
+  def comments
+    @users = User.all
+    @story = :find_story
+  end
+
   def delete
   end
 

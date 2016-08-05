@@ -4,31 +4,37 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
       <%= form_for @story do |f| %>
-        <%= render partial: 'shared/error_messages', locals: {mdl:@story } %>
+        <%= render partial: 'shared/error_messages',
+          locals: {objectable: @story } %>
 
         <div class="form-group">
           <%= f.label :title %>
-          <%= f.text_field :title, class:"form-control", placeholder:"teasing name for your story" %>
+          <%= f.text_field :title, class:"form-control",
+            placeholder:"teasing name for your story" %>
         </div>
 
         <div class="form-group">
           <%= f.label :subtitle %>
-          <%= f.text_field :subtitle, class:"form-control", placeholder:"inviting one liner summary" %>
+          <%= f.text_field :subtitle, class:"form-control",
+            placeholder:"inviting one liner summary" %>
         </div>
 
         <div class="form-group">
           <%= f.label :content %>
-          <%= f.text_area :content, cols: "25", rows: "5", class:"form-control", placeholder:"and the story goes here" %>
+          <%= f.text_area :content, cols: "25", rows: "5",
+            class:"form-control", placeholder:"and the story goes here" %>
         </div>
 
         <div class="form-group">
           <%= f.label :tags %>
-          <%= f.text_field :tags, class:"form-control", placeholder:"minimum 1 tag and maximum 6 tags, use # as prefix for tags" %>
+          <%= f.text_field :tags, class:"form-control",
+            placeholder:"minimum 1 tag and maximum 6 tags, use # as prefix for tags" %>
         </div>
 
         <div class="form-group">
           <a href="<%= root_path %>" class="btn btn-warning btn-lg">Cancel</a>
-          <%= f.submit local_assigns[:submit_text], class: "btn btn-success btn-lg" %>
+          <%= f.submit local_assigns[:submit_text],
+            class: "btn btn-success btn-lg" %>
         </div>
       <% end %>
   </div>

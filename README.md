@@ -23,9 +23,9 @@ was thinking about creating a forum due to with it I can cover the following top
   - all other commmon bootstrap components
 
 and while drafting the Relationship model, I realize that the category/ies
-is such a annoyance from user point of view (imagine that you have to think the thread you are writing belong to which category and sub-category AND the embarassment when the response say you post it on the wrong category)
+is such a annoyance from user point of view (imagine that you have to think the thread you are writing belong to which category and sub-category AND the embarrassment when the response say you post it on the wrong category)
 
-therefor I thought it will be better to just use tags, something like a stack overflow BUT I don't want it to look like tradional forum structure afterall it will be called a story so should be something more inviting.
+therefor I thought it will be better to just use tags, something like a stack overflow BUT I don't want it to look like traditional forum structure after-all it will be called a story so should be something more inviting.
 
 and when I look around for inspiration it turn out what I want "Medium" (minus the awesome editor [for the moment]).
 
@@ -36,7 +36,7 @@ Clone and an e-commerce site)
 ## To Do List
 1. Story  => Done
 2. User + authentication using devise => Done
-3. Comment
+3. Comment => Done (only the last can be edited / deleted by commenter)
 3. Add Voting (for user and story)
 4. Follow and Following feature
 5. Trending tags on the home (keep track of tags by story;)
@@ -44,3 +44,8 @@ Clone and an e-commerce site)
 
 I'll only apply basic styling for this project as aesthetics can hold until all
 the feature is implemented.
+
+Improvement:
+- edit comment on the same page
+- partial for new and edit comments
+- 

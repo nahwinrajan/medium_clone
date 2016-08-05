@@ -1,17 +1,37 @@
 <div class="container-fluid">
   <div class="page-header text-center">
     <h1> <%= @story.title%> </h1>
-    <small> <%= @story.subtitle%> </small>
+    <h4> <%= @story.subtitle%> </h3>
+    <small>by <%= @story.user.fullname %></small>
   </div>
   <div class="row">
+    <% if user_signed_in? && @story.user == current_user %>
+    <div class="col-md-3 col-md-offset-9">
+      <%= link_to "", edit_story_path(@story),
+        class: 'btn btn-info btn-sm fa fa-pencil-square-o' %>
+      <%= link_to "", story_path(@story),
+        method: :delete,
+        data: {confirm: "Are you sure to delete this post ?"},
+        class: "btn btn-danger btn-sm fa fa-trash"
+      %>
+    </div>
+    <% end %>
     <div class="col-md-6 col-md-offset-3">
       <%= simple_format(@story.content) %>
     </div>
-    <% if @story.user == current_user %>
-    <div class="col-md-1">
-      <%= link_to "edit", edit_story_path(@story), class: 'btn btn-default' %>
-      <%= link_to "delete", story_path(@story), method: :delete, data: {confirm: "Are you sure to delete this post ?"}, class: "btn btn-danger" %>
-    </div>
-    <% end %>
   </div>
+  <% if @story.comments.count > 0 %>
+  <section class="comments">
+    <div class="page-header">
+      <h2><%= @story.comments.count.to_s << " " <<
+        "comment".pluralize(@story.comments.count)%>
+      </h2>
+    </div>
+    <% @story.comments.each do |c| %>
+      <%= render partial: 'comments/comment', locals: {comment: c} %>
+    <% end %>
+  </section>
+  <% end %>
+  <%= render partial: 'comments/form', locals: {
+    comment_url: (new_story_comment_path(@story)) } %>
 </div>

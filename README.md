@@ -20,7 +20,7 @@ was thinking about creating a forum due to with it I can cover the following top
 - bootstrap styling
   - breadcrumb
   - pagination
-  - all other commmon bootstrap components
+  - all other common bootstrap components
 
 and while drafting the Relationship model, I realize that the category/ies
 is such a annoyance from user point of view (imagine that you have to think the thread you are writing belong to which category and sub-category AND the embarrassment when the response say you post it on the wrong category)
@@ -48,4 +48,3 @@ the feature is implemented.
 Improvement:
 - edit comment on the same page
 - partial for new and edit comments
-- 

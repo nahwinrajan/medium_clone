@@ -7,19 +7,43 @@
   <div class="row">
     <% if user_signed_in? && @story.user == current_user %>
     <div class="col-md-3 col-md-offset-9">
-      <%= link_to "", edit_story_path(@story),
-        class: 'btn btn-info btn-sm fa fa-pencil-square-o' %>
-      <%= link_to "", story_path(@story),
-        method: :delete,
-        data: {confirm: "Are you sure to delete this post ?"},
-        class: "btn btn-danger btn-sm fa fa-trash"
-      %>
+
     </div>
     <% end %>
     <div class="col-md-6 col-md-offset-3">
       <%= simple_format(@story.content) %>
     </div>
   </div>
+  <!-- tools section, like/dislike edit delete -->
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <% if user_signed_in? %>
+        <!-- like / dislike -->
+        <% if current_user.liked? @story %>
+          <%= link_to "", unlike_story_path,
+            method: :put,
+            class: "btn btn-sm fa fa-heart color-red" %>
+        <% else %>
+          <%= link_to "", like_story_path,
+            method: :put,
+            class: "btn btn-sm fa fa-heart-o color-red" %>
+        <% end %>
+          <%= @story.get_likes.size.to_s if @story.get_likes.size > 0 %>
+          <%= "like".pluralize(@story.get_likes.size) %>
+          <!-- edit delete button -->
+        <% if @story.user == current_user %>
+          <%= link_to "", edit_story_path(@story),
+            class: 'btn btn-info btn-sm fa fa-pencil-square-o' %>
+          <%= link_to "", story_path(@story),
+            method: :delete,
+            data: {confirm: "Are you sure to delete this post ?"},
+            class: "btn btn-danger btn-sm fa fa-trash"
+          %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <!-- comments section -->
   <% if @story.comments.count > 0 %>
   <section class="comments">
     <div class="page-header">
@@ -32,6 +56,7 @@
     <% end %>
   </section>
   <% end %>
+  <!-- comment form -->
   <%= render partial: 'comments/form', locals: {
     comment_url: (new_story_comment_path(@story)) } %>
 </div>

@@ -26,26 +26,37 @@
     box-sizing: border-box;
   }
 
+  $color-red: #e64759;
+
   body {
-    font-family: "Comfortaa", "Open Sans", "Helvetica Neu", Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5em;
-    color: #555;
-     padding-top: 70px; //navbar-fixed-top requirement
-  }
+  font-family: "Comfortaa", "Open Sans", "Helvetica Neu", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: #555;
+   padding-top: 70px; //navbar-fixed-top requirement
+}
 
   .debug_dump {
-    clear: both;
-    float: left;
-    width: 100%;
-    margin-top: 45px;
-    @include box_sizing;
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #5fb3b3;
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #5fb3b3;
 
-    color: #f99157;
-    background-color: #333;
+  color: #f99157;
+  background-color: #333;
 
-    font-family: "Anonymous Pro", "Inconsolota";
-  }
+  font-family: "Anonymous Pro", "Inconsolota";
+}
+
+color-red {
+  color: $color-red;
+}
+a.color-red, a:hover.color-red,
+a:visited.color-red {
+  color: $color-red;
+  text-decoration: none;
+}

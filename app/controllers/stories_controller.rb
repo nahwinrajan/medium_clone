@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
   before_action :authenticate_user!, except:[:index, :show]
-  before_action :find_story, only: [:show, :edit, :update, :delete, :destroy]
+  before_action :find_story, except: [:new, :index, :create ]
 
   def index
     @stories = Story.all.order("created_at DESC")
@@ -39,10 +39,10 @@ class StoriesController < ApplicationController
     end
   end
 
-  def comments
-    @users = User.all
-    @story = :find_story
-  end
+  # def comments
+  #   @users = User.all
+  #   @story = :find_story
+  # end
 
   def delete
   end
@@ -52,6 +52,16 @@ class StoriesController < ApplicationController
       flash[:success] = "#{@story.title} is deleted!!"
       redirect_to root_path
     end
+  end
+
+  def upvote
+    @story.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @story.downvote_by current_user
+    redirect_to :back
   end
 
   private

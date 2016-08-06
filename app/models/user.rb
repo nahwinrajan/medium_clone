@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  acts_as_voter
+  
   def downcase_all_columns
     self.email = self.email.downcase
     self.f_name = f_name.downcase

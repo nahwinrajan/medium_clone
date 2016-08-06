@@ -37,10 +37,10 @@ Clone and an e-commerce site)
 1. Story  => Done
 2. User + authentication using devise => Done
 3. Comment => Done (only the last can be edited / deleted by commenter)
-3. Add Voting (for user and story)
+3. Add Voting (for user and story) => done
 4. Follow and Following feature
 5. Trending tags on the home (keep track of tags by story;)
-6. Populate database with dummy (faker gem)
+6. Populate database with dummy data (faker gem)
 
 I'll only apply basic styling for this project as aesthetics can hold until all
 the feature is implemented.

@@ -40,6 +40,12 @@
             class: "btn btn-danger btn-sm fa fa-trash"
           %>
         <% end %>
+      <% else %>
+      <%= link_to "", like_story_path,
+        method: :put,
+        class: "btn btn-sm fa fa-heart-o color-red" %>
+        <%= @story.get_likes.size.to_s if @story.get_likes.size > 0 %>
+        <%= "like".pluralize(@story.get_likes.size) %>
       <% end %>
     </div>
   </div>

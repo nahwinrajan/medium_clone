@@ -48,3 +48,4 @@ the feature is implemented.
 Improvement:
 - edit comment on the same page
 - partial for new and edit comments
+- minimize existing routes

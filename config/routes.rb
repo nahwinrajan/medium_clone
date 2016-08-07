@@ -5,9 +5,16 @@ Rails.application.routes.draw do
     resources :comments
     member do
       put "like",     to: "stories#upvote"
-      put "unlike",  to: "stories#downvote"
+      put "unlike",   to: "stories#downvote"
     end
   end
 
-  devise_for :users, controllers: { registrations: 'registrations'}
+  devise_for :users, controllers: { registrations: 'registrations' }
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
+  resources :relationships,       only: [:create, :destroy]
 end

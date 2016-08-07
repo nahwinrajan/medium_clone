@@ -1,0 +1,7 @@
+<% @user || current_user %>
+<% if !@user.nil? %>
+<div class="stats">
+  <%= link_to "#{@user.following.count} following", id: "following-stats" %>
+  <%= link_to "#{@user.followers.count} followers", id:"followers-stats" %>
+</div>
+<% end %>
